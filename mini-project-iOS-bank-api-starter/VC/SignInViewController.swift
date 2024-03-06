@@ -29,56 +29,58 @@ class SignInViewController: FormViewController {
             <<< ButtonRow() {
                 $0.title = "Sign In"
                 }.onCellSelection { cell, row in
-                    self.signIn()
+                    self.submitTapped()
             }
     }
     
-    func signIn() {
-        let valuesDictionary = form.values()
-        
-        guard let username = valuesDictionary["username"] as? String,
-              let password = valuesDictionary["password"] as? String else {
-            // Handle missing values
-            return
-        }
-        
-        // Call the function to send the data to the server
-        sendSignInRequest(username: username, password: password)
-    }
-    
-    func sendSignInRequest(username: String, password: String) {
-        let url = URL(string: "https://coded-bank-api.eapi.joincoded.com/signin")!
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        
-        let parameters: [String: Any] = [
-            "username": username,
-            "password": password
-        ]
-        
-        do {
-            request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
-        } catch let error {
-            print("Error serializing JSON: \(error.localizedDescription)")
-            return
-        }
-        
-        URLSession.shared.dataTask(with: request) { data, response, error in
-            // Handle response here
-            if let error = error {
-                print("Error: \(error.localizedDescription)")
+    @objc func submitTapped(){
+            
+            let errors = form.validate()
+            guard errors.isEmpty else{
+                print("Somthing is missing!")
+                print(errors)
+                let countError = errors.count
+                presentAlertWithTitle(title: "error!!", message: " \(countError) TextFields empty")
                 return
             }
+
             
-            if let httpResponse = response as? HTTPURLResponse {
-                print("Response status code: \(httpResponse.statusCode)")
-             
+            let nameRow: TextRow? = form.rowBy(tag: "username")
+            let name = nameRow?.value ?? ""
+            
+            let passwordRow: PasswordRow? = form.rowBy(tag: "Password")
+            let password = passwordRow?.value ?? ""
+            
+            let user = User(username: name, email: nil, password: password)
+            
+            
+            NetworkManager.shared.signup(user: user) { success in
+                DispatchQueue.main.async {
+
+                    
+                    switch success{
+                    case .success(let tokenResponse):
+                        print(tokenResponse.token)
+                        
+                        
+                        //Navigate to Profile page
+                        let profileVC = ProfileViewController()
+                        self.navigationController?.pushViewController(profileVC, animated: true)
+                        
+                
+                    case .failure(let error):
+                        print(error)
+                    }
+                    
+                }
             }
             
-    
-            if let data = data, let responseData = String(data: data, encoding: .utf8) {
-                print("Response data: \(responseData)")
+            
+            func presentAlertWithTitle(title: String, message: String) {
+                let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default))
+                present(alert, animated: true, completion: nil)
             }
-        }.resume()
+        }
+        
     }
-}

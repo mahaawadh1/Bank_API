@@ -26,7 +26,7 @@
 		10AA8BE82B983806003F0740 /* AccountCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AA8BE72B983806003F0740 /* AccountCreationViewController.swift */; };
 		10AA8BEA2B9842E3003F0740 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AA8BE92B9842E3003F0740 /* SignInViewController.swift */; };
 		10AA8BEC2B9848B9003F0740 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AA8BEB2B9848B9003F0740 /* Credentials.swift */; };
-		10AA8BEE2B9849B3003F0740 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AA8BED2B9849B3003F0740 /* DetailsViewController.swift */; };
+		10AA8BEE2B9849B3003F0740 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AA8BED2B9849B3003F0740 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,7 +46,7 @@
 		10AA8BE72B983806003F0740 /* AccountCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCreationViewController.swift; sourceTree = "<group>"; };
 		10AA8BE92B9842E3003F0740 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		10AA8BEB2B9848B9003F0740 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
-		10AA8BED2B9849B3003F0740 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		10AA8BED2B9849B3003F0740 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,7 +139,7 @@
 				05CF04C32B97A0AF00672FDF /* ViewController.swift */,
 				10AA8BE72B983806003F0740 /* AccountCreationViewController.swift */,
 				10AA8BE92B9842E3003F0740 /* SignInViewController.swift */,
-				10AA8BED2B9849B3003F0740 /* DetailsViewController.swift */,
+				10AA8BED2B9849B3003F0740 /* ProfileViewController.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -234,7 +234,7 @@
 				05CF04C02B97A0AF00672FDF /* AppDelegate.swift in Sources */,
 				05CF04E12B97A23C00672FDF /* User.swift in Sources */,
 				05CF04DF2B97A22A00672FDF /* AmountChange.swift in Sources */,
-				10AA8BEE2B9849B3003F0740 /* DetailsViewController.swift in Sources */,
+				10AA8BEE2B9849B3003F0740 /* ProfileViewController.swift in Sources */,
 				05CF04DB2B97A1FA00672FDF /* TokenResponse.swift in Sources */,
 				10AA8BE82B983806003F0740 /* AccountCreationViewController.swift in Sources */,
 				10AA8BEC2B9848B9003F0740 /* Credentials.swift in Sources */,
