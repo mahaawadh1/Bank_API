@@ -6,17 +6,42 @@
 //
 
 import UIKit
+import Eureka
 
-class ViewController: UIViewController {
+class ViewController: FormViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        form +++ Section()
+            <<< ButtonRow() {
+                $0.title = "Create Account"
+                $0.cell.tintColor = .blue  // Set button color
+                }.onCellSelection { cell, row in
+                    self.createAccountButtonTapped()
+            }
+            .cellUpdate { cell, row in
+                cell.textLabel?.textAlignment = .center  // Center align the button text
+            }
+            
+            <<< ButtonRow() {
+                $0.title = "Sign In"
+                $0.cell.tintColor = .green  // Set button color
+                }.onCellSelection { cell, row in
+                    self.signInButtonTapped()
+            }
+            .cellUpdate { cell, row in
+                cell.textLabel?.textAlignment = .center  // Center align the button text
+            }
     }
 
-    @IBAction func createAccountButtonTapped(_ sender: Any) {
+    func createAccountButtonTapped() {
         let accountCreationVC = AccountCreationViewController()
-        let navController = UINavigationController(rootViewController: accountCreationVC)
-    
-        present(navController, animated: true, completion: nil)
+        navigationController?.pushViewController(accountCreationVC, animated: true)
+    }
+
+    func signInButtonTapped() {
+        let signInVC = SignInViewController()
+        navigationController?.pushViewController(signInVC, animated: true)
     }
 }

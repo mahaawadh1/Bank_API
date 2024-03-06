@@ -1,5 +1,5 @@
 //
-//  AccountCreationViewController.swift
+//  singViewController.swift
 //  mini-project-iOS-bank-api-starter
 //
 //  Created by maha on 06/03/2024.
@@ -8,12 +8,12 @@
 import UIKit
 import Eureka
 
-class AccountCreationViewController: FormViewController {
-
+class SignInViewController: FormViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        form +++ Section("Create new account")
+        form +++ Section("Sign In")
             <<< TextRow() {
                 $0.title = "Username"
                 $0.placeholder = "Enter username"
@@ -24,44 +24,36 @@ class AccountCreationViewController: FormViewController {
                 $0.placeholder = "Enter password"
                 $0.tag = "password"
             }
-            <<< EmailRow() {
-                $0.title = "Email"
-                $0.placeholder = "Enter email"
-                $0.tag = "email"
-            }
         
         +++ Section()
             <<< ButtonRow() {
-                $0.title = "Create Account"
+                $0.title = "Sign In"
                 }.onCellSelection { cell, row in
-                    self.createAccount()
+                    self.signIn()
             }
     }
     
-    func createAccount() {
+    func signIn() {
         let valuesDictionary = form.values()
         
         guard let username = valuesDictionary["username"] as? String,
-              let password = valuesDictionary["password"] as? String,
-              let email = valuesDictionary["email"] as? String else {
-        
+              let password = valuesDictionary["password"] as? String else {
+            // Handle missing values
             return
         }
-    
-        sendAccountCreationRequest(username: username, password: password, email: email)
+        
+        // Call the function to send the data to the server
+        sendSignInRequest(username: username, password: password)
     }
     
-    func sendAccountCreationRequest(username: String, password: String, email: String) {
-
-        let url = URL(string: "https://coded-bank-api.eapi.joincoded.com/signup")!
+    func sendSignInRequest(username: String, password: String) {
+        let url = URL(string: "https://coded-bank-api.eapi.joincoded.com/signin")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         
-
         let parameters: [String: Any] = [
             "username": username,
-            "password": password,
-            "email": email
+            "password": password
         ]
         
         do {
@@ -71,7 +63,6 @@ class AccountCreationViewController: FormViewController {
             return
         }
         
-        // Send the request
         URLSession.shared.dataTask(with: request) { data, response, error in
             // Handle response here
             if let error = error {
@@ -81,10 +72,10 @@ class AccountCreationViewController: FormViewController {
             
             if let httpResponse = response as? HTTPURLResponse {
                 print("Response status code: \(httpResponse.statusCode)")
-
+             
             }
             
-        
+    
             if let data = data, let responseData = String(data: data, encoding: .utf8) {
                 print("Response data: \(responseData)")
             }

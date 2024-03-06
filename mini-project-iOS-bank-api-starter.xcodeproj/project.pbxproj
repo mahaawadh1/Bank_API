@@ -24,6 +24,9 @@
 		10AA8BE42B983736003F0740 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 10AA8BE32B983736003F0740 /* SnapKit */; };
 		10AA8BE62B983736003F0740 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 10AA8BE52B983736003F0740 /* SnapKit-Dynamic */; };
 		10AA8BE82B983806003F0740 /* AccountCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AA8BE72B983806003F0740 /* AccountCreationViewController.swift */; };
+		10AA8BEA2B9842E3003F0740 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AA8BE92B9842E3003F0740 /* SignInViewController.swift */; };
+		10AA8BEC2B9848B9003F0740 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AA8BEB2B9848B9003F0740 /* Credentials.swift */; };
+		10AA8BEE2B9849B3003F0740 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AA8BED2B9849B3003F0740 /* DetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +44,9 @@
 		05CF04DE2B97A22A00672FDF /* AmountChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountChange.swift; sourceTree = "<group>"; };
 		05CF04E02B97A23C00672FDF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		10AA8BE72B983806003F0740 /* AccountCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCreationViewController.swift; sourceTree = "<group>"; };
+		10AA8BE92B9842E3003F0740 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		10AA8BEB2B9848B9003F0740 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
+		10AA8BED2B9849B3003F0740 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +128,7 @@
 				05CF04DA2B97A1FA00672FDF /* TokenResponse.swift */,
 				05CF04E02B97A23C00672FDF /* User.swift */,
 				05CF04DE2B97A22A00672FDF /* AmountChange.swift */,
+				10AA8BEB2B9848B9003F0740 /* Credentials.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -131,6 +138,8 @@
 			children = (
 				05CF04C32B97A0AF00672FDF /* ViewController.swift */,
 				10AA8BE72B983806003F0740 /* AccountCreationViewController.swift */,
+				10AA8BE92B9842E3003F0740 /* SignInViewController.swift */,
+				10AA8BED2B9849B3003F0740 /* DetailsViewController.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -219,13 +228,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				05CF04C42B97A0AF00672FDF /* ViewController.swift in Sources */,
+				10AA8BEA2B9842E3003F0740 /* SignInViewController.swift in Sources */,
 				05CF04D42B97A12600672FDF /* customView.swift in Sources */,
 				05CF04D82B97A15200672FDF /* NetworkManager.swift in Sources */,
 				05CF04C02B97A0AF00672FDF /* AppDelegate.swift in Sources */,
 				05CF04E12B97A23C00672FDF /* User.swift in Sources */,
 				05CF04DF2B97A22A00672FDF /* AmountChange.swift in Sources */,
+				10AA8BEE2B9849B3003F0740 /* DetailsViewController.swift in Sources */,
 				05CF04DB2B97A1FA00672FDF /* TokenResponse.swift in Sources */,
 				10AA8BE82B983806003F0740 /* AccountCreationViewController.swift in Sources */,
+				10AA8BEC2B9848B9003F0740 /* Credentials.swift in Sources */,
 				05CF04C22B97A0AF00672FDF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
