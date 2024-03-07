@@ -4,90 +4,112 @@
 //
 //  Created by maha on 06/03/2024.
 //
-
 import UIKit
 import Eureka
 
 class AccountCreationViewController: FormViewController {
-
+    var token: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        form +++ Section("Create new account")
-            <<< TextRow() {
-                $0.title = "Username"
-                $0.placeholder = "Enter username"
-                $0.tag = "username"
-            }
-            <<< PasswordRow() {
-                $0.title = "Password"
-                $0.placeholder = "Enter password"
-                $0.tag = "password"
-            }
-            <<< EmailRow() {
-                $0.title = "Email"
-                $0.placeholder = "Enter email"
-                $0.tag = "email"
-            }
-        
-        +++ Section()
-            <<< ButtonRow() {
-                $0.title = "Create Account"
-                }.onCellSelection { cell, row in
-                    self.createAccount()
-            }
+        signUpForm()
     }
     
-    func createAccount() {
-        let valuesDictionary = form.values()
+    private func signUpForm(){
         
-        guard let username = valuesDictionary["username"] as? String,
-              let password = valuesDictionary["password"] as? String,
-              let email = valuesDictionary["email"] as? String else {
+        form +++ Section("SignUp")
         
-            return
+        <<< EmailRow() {row in
+            row.title = "Email"
+            row.placeholder = "Enter Your Email"
+            row.tag = "Email"
+            row.add(rule: RuleRequired())
+            row.validationOptions = .validatesOnChange
+            row.cellUpdate { cell, row in
+                if !row.isValid{
+                    cell.titleLabel?.textColor = .red
+                }
+            }
         }
-    
-        sendAccountCreationRequest(username: username, password: password, email: email)
-    }
-    
-    func sendAccountCreationRequest(username: String, password: String, email: String) {
-
-        let url = URL(string: "https://coded-bank-api.eapi.joincoded.com/signup")!
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        
-
-        let parameters: [String: Any] = [
-            "username": username,
-            "password": password,
-            "email": email
-        ]
-        
-        do {
-            request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
-        } catch let error {
-            print("Error serializing JSON: \(error.localizedDescription)")
-            return
+        <<< TextRow() {row in
+            row.title = "UserName"
+            row.placeholder = "Enter Your Name"
+            row.tag = "Name"
+            row.add(rule: RuleRequired())
+            row.validationOptions = .validatesOnChange
+            row.cellUpdate { cell, row in
+                if !row.isValid {
+                    cell.titleLabel?.textColor = .red
+                }
+            }
+        }
+        <<< PasswordRow() { row in
+            row.title = "Password"
+            row.placeholder = "Enter Your Password"
+            row.tag = "Password"
+            row.add(rule: RuleRequired())
+            row.validationOptions = .validatesOnChange
+            row.cellUpdate { cell, row in
+                if !row.isValid {
+                    cell.titleLabel?.textColor = .red
+                }
+            }
+        }
+        +++ Section("   ")
+        <<< ButtonRow() { row in
+            row.title = "Sign Up"
+            row.onCellSelection { cell, row in
+                print("button cell tapped")
+                self.submitTapped()
+            }
         }
         
-        // Send the request
-        URLSession.shared.dataTask(with: request) { data, response, error in
-            // Handle response here
-            if let error = error {
-                print("Error: \(error.localizedDescription)")
-                return
-            }
-            
-            if let httpResponse = response as? HTTPURLResponse {
-                print("Response status code: \(httpResponse.statusCode)")
-
-            }
-            
-        
-            if let data = data, let responseData = String(data: data, encoding: .utf8) {
-                print("Response data: \(responseData)")
-            }
-        }.resume()
     }
+    
+    @objc func submitTapped(){
+            
+        let errors = form.validate()
+        guard errors.isEmpty else{
+            print("Somthing is missing!")
+            print(errors)
+            let countError = errors.count
+            presentAlertWithTitle(title: "error!!", message: " \(countError) TextFields empty")
+            return
+        }
+        
+        let emailRow : EmailRow? = form.rowBy(tag: "Email")
+        let email = emailRow?.value ?? ""
+        
+        let nameRow: TextRow? = form.rowBy(tag: "Name")
+        let name = nameRow?.value ?? ""
+        
+        let passwordRow: PasswordRow? = form.rowBy(tag: "Password")
+        let password = passwordRow?.value ?? ""
+        
+        let user = User(username: name, email: email, password: password)
+        print("signup ",user)
+        
+        NetworkManager.shared.signup(user: user) { success in
+            DispatchQueue.main.async {
+                switch success{
+                case .success(let tokenResponse):
+                    print(tokenResponse.token)
+                    
+                    // Navigation
+                    
+                case .failure(let error):
+                    print(error)
+                }
+                
+            }
+        }
+        
+        
+        func presentAlertWithTitle(title: String, message: String) {
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            present(alert, animated: true, completion: nil)
+        }
+    }
+    
 }

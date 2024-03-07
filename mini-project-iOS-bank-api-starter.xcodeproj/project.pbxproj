@@ -10,7 +10,6 @@
 		05CF04C02B97A0AF00672FDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CF04BF2B97A0AF00672FDF /* AppDelegate.swift */; };
 		05CF04C22B97A0AF00672FDF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CF04C12B97A0AF00672FDF /* SceneDelegate.swift */; };
 		05CF04C42B97A0AF00672FDF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CF04C32B97A0AF00672FDF /* ViewController.swift */; };
-		05CF04C72B97A0AF00672FDF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05CF04C52B97A0AF00672FDF /* Main.storyboard */; };
 		05CF04C92B97A0B000672FDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05CF04C82B97A0B000672FDF /* Assets.xcassets */; };
 		05CF04CC2B97A0B000672FDF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05CF04CA2B97A0B000672FDF /* LaunchScreen.storyboard */; };
 		05CF04D42B97A12600672FDF /* customView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CF04D32B97A12600672FDF /* customView.swift */; };
@@ -18,6 +17,12 @@
 		05CF04DB2B97A1FA00672FDF /* TokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CF04DA2B97A1FA00672FDF /* TokenResponse.swift */; };
 		05CF04DF2B97A22A00672FDF /* AmountChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CF04DE2B97A22A00672FDF /* AmountChange.swift */; };
 		05CF04E12B97A23C00672FDF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CF04E02B97A23C00672FDF /* User.swift */; };
+		108A4D462B9860D600BB3334 /* DepositViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108A4D452B9860D600BB3334 /* DepositViewController.swift */; };
+		108A4D482B9860E400BB3334 /* WithdrawalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108A4D472B9860E400BB3334 /* WithdrawalViewController.swift */; };
+		108A4D4A2B9886FB00BB3334 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108A4D492B9886FB00BB3334 /* Account.swift */; };
+		108A4D4D2B99A1F200BB3334 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 108A4D4C2B99A1F200BB3334 /* Kingfisher */; };
+		108A4D4F2B99AF1000BB3334 /* TransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108A4D4E2B99AF1000BB3334 /* TransactionsViewController.swift */; };
+		108A4D512B99AF3400BB3334 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108A4D502B99AF3400BB3334 /* Transaction.swift */; };
 		10AA8BDC2B983719003F0740 /* Eureka in Frameworks */ = {isa = PBXBuildFile; productRef = 10AA8BDB2B983719003F0740 /* Eureka */; };
 		10AA8BDF2B983723003F0740 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 10AA8BDE2B983723003F0740 /* Alamofire */; };
 		10AA8BE12B983723003F0740 /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 10AA8BE02B983723003F0740 /* AlamofireDynamic */; };
@@ -25,7 +30,6 @@
 		10AA8BE62B983736003F0740 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 10AA8BE52B983736003F0740 /* SnapKit-Dynamic */; };
 		10AA8BE82B983806003F0740 /* AccountCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AA8BE72B983806003F0740 /* AccountCreationViewController.swift */; };
 		10AA8BEA2B9842E3003F0740 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AA8BE92B9842E3003F0740 /* SignInViewController.swift */; };
-		10AA8BEC2B9848B9003F0740 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AA8BEB2B9848B9003F0740 /* Credentials.swift */; };
 		10AA8BEE2B9849B3003F0740 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AA8BED2B9849B3003F0740 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -34,7 +38,6 @@
 		05CF04BF2B97A0AF00672FDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05CF04C12B97A0AF00672FDF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		05CF04C32B97A0AF00672FDF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		05CF04C62B97A0AF00672FDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		05CF04C82B97A0B000672FDF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		05CF04CB2B97A0B000672FDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		05CF04CD2B97A0B000672FDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -43,9 +46,13 @@
 		05CF04DA2B97A1FA00672FDF /* TokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenResponse.swift; sourceTree = "<group>"; };
 		05CF04DE2B97A22A00672FDF /* AmountChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountChange.swift; sourceTree = "<group>"; };
 		05CF04E02B97A23C00672FDF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		108A4D452B9860D600BB3334 /* DepositViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositViewController.swift; sourceTree = "<group>"; };
+		108A4D472B9860E400BB3334 /* WithdrawalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawalViewController.swift; sourceTree = "<group>"; };
+		108A4D492B9886FB00BB3334 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		108A4D4E2B99AF1000BB3334 /* TransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewController.swift; sourceTree = "<group>"; };
+		108A4D502B99AF3400BB3334 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		10AA8BE72B983806003F0740 /* AccountCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCreationViewController.swift; sourceTree = "<group>"; };
 		10AA8BE92B9842E3003F0740 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
-		10AA8BEB2B9848B9003F0740 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		10AA8BED2B9849B3003F0740 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -54,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				108A4D4D2B99A1F200BB3334 /* Kingfisher in Frameworks */,
 				10AA8BE62B983736003F0740 /* SnapKit-Dynamic in Frameworks */,
 				10AA8BDC2B983719003F0740 /* Eureka in Frameworks */,
 				10AA8BE42B983736003F0740 /* SnapKit in Frameworks */,
@@ -89,7 +97,6 @@
 				05CF04D92B97A1A000672FDF /* NetworkClass */,
 				05CF04DC2B97A21000672FDF /* Model */,
 				05CF04DD2B97A21600672FDF /* VC */,
-				05CF04C52B97A0AF00672FDF /* Main.storyboard */,
 				05CF04C82B97A0B000672FDF /* Assets.xcassets */,
 				05CF04CA2B97A0B000672FDF /* LaunchScreen.storyboard */,
 				05CF04CD2B97A0B000672FDF /* Info.plist */,
@@ -128,7 +135,8 @@
 				05CF04DA2B97A1FA00672FDF /* TokenResponse.swift */,
 				05CF04E02B97A23C00672FDF /* User.swift */,
 				05CF04DE2B97A22A00672FDF /* AmountChange.swift */,
-				10AA8BEB2B9848B9003F0740 /* Credentials.swift */,
+				108A4D492B9886FB00BB3334 /* Account.swift */,
+				108A4D502B99AF3400BB3334 /* Transaction.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -140,6 +148,9 @@
 				10AA8BE72B983806003F0740 /* AccountCreationViewController.swift */,
 				10AA8BE92B9842E3003F0740 /* SignInViewController.swift */,
 				10AA8BED2B9849B3003F0740 /* ProfileViewController.swift */,
+				108A4D452B9860D600BB3334 /* DepositViewController.swift */,
+				108A4D472B9860E400BB3334 /* WithdrawalViewController.swift */,
+				108A4D4E2B99AF1000BB3334 /* TransactionsViewController.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -166,6 +177,7 @@
 				10AA8BE02B983723003F0740 /* AlamofireDynamic */,
 				10AA8BE32B983736003F0740 /* SnapKit */,
 				10AA8BE52B983736003F0740 /* SnapKit-Dynamic */,
+				108A4D4C2B99A1F200BB3334 /* Kingfisher */,
 			);
 			productName = "mini-project-iOS-bank-api-starter";
 			productReference = 05CF04BC2B97A0AF00672FDF /* mini-project-iOS-bank-api-starter.app */;
@@ -199,6 +211,7 @@
 				10AA8BDA2B983719003F0740 /* XCRemoteSwiftPackageReference "Eureka" */,
 				10AA8BDD2B983723003F0740 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				10AA8BE22B983736003F0740 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				108A4D4B2B99A1F200BB3334 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 05CF04BD2B97A0AF00672FDF /* Products */;
 			projectDirPath = "";
@@ -216,7 +229,6 @@
 			files = (
 				05CF04CC2B97A0B000672FDF /* LaunchScreen.storyboard in Resources */,
 				05CF04C92B97A0B000672FDF /* Assets.xcassets in Resources */,
-				05CF04C72B97A0AF00672FDF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,6 +240,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				05CF04C42B97A0AF00672FDF /* ViewController.swift in Sources */,
+				108A4D482B9860E400BB3334 /* WithdrawalViewController.swift in Sources */,
+				108A4D512B99AF3400BB3334 /* Transaction.swift in Sources */,
 				10AA8BEA2B9842E3003F0740 /* SignInViewController.swift in Sources */,
 				05CF04D42B97A12600672FDF /* customView.swift in Sources */,
 				05CF04D82B97A15200672FDF /* NetworkManager.swift in Sources */,
@@ -236,8 +250,10 @@
 				05CF04DF2B97A22A00672FDF /* AmountChange.swift in Sources */,
 				10AA8BEE2B9849B3003F0740 /* ProfileViewController.swift in Sources */,
 				05CF04DB2B97A1FA00672FDF /* TokenResponse.swift in Sources */,
+				108A4D4F2B99AF1000BB3334 /* TransactionsViewController.swift in Sources */,
+				108A4D462B9860D600BB3334 /* DepositViewController.swift in Sources */,
+				108A4D4A2B9886FB00BB3334 /* Account.swift in Sources */,
 				10AA8BE82B983806003F0740 /* AccountCreationViewController.swift in Sources */,
-				10AA8BEC2B9848B9003F0740 /* Credentials.swift in Sources */,
 				05CF04C22B97A0AF00672FDF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -245,14 +261,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		05CF04C52B97A0AF00672FDF /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				05CF04C62B97A0AF00672FDF /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		05CF04CA2B97A0B000672FDF /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -461,6 +469,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		108A4D4B2B99A1F200BB3334 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.11.0;
+			};
+		};
 		10AA8BDA2B983719003F0740 /* XCRemoteSwiftPackageReference "Eureka" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/xmartlabs/Eureka";
@@ -488,6 +504,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		108A4D4C2B99A1F200BB3334 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 108A4D4B2B99A1F200BB3334 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		10AA8BDB2B983719003F0740 /* Eureka */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 10AA8BDA2B983719003F0740 /* XCRemoteSwiftPackageReference "Eureka" */;
